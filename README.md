@@ -28,9 +28,15 @@ Open [http://localhost:8080](http://localhost:8080) to start using the todo app.
 - Single 10MB binary
 - Built-in web server and datastore
 
+## Tech Stack
+
+- Backend: [Duso](https://duso.rocks)
+- Frontend: [HTMX](https://htmx.org)
+
 ## Learn More
 
 - [Duso Documentation](https://duso.rocks)
+- [HTMX Documentation](https://htmx.org)
 - [Blog Post](#) (coming soon)
 - [Framework Comparison](#) (coming soon)
 
