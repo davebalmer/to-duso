@@ -53,7 +53,7 @@ Open [http://localhost:8080](http://localhost:8080) to start using the todo app.
 ## Learn More
 
 - [Blog Post](#) (coming soon)
-- [How it compares with 6 other TODO MVP apps](https://duso.rocks/docs/docs/todo-comparison.html) written in a number of solutions (TL;DR this example is shorter and less messy than the rest)
+- [How it compares](https://duso.rocks/docs/docs/todo-comparison.html) (TL;DR it rocks!)
 - [Duso Homepage](https://duso.rocks)
 - [HTMX Homepage](https://htmx.org)
 
