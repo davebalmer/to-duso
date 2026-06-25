@@ -1,0 +1,47 @@
+render = require("render.du")
+ctx = context()
+res = ctx.response()
+req = ctx.request()
+
+session_id = req.params.session
+if not session_id then
+  session_id = uuid()
+  res.redirect("/" + session_id)
+end
+
+function render_items(items, session_id)
+  html = ""
+  for i = 0, len(items) - 1 do
+    html = html + render.todo(session_id, i)
+  end
+  return html
+end
+
+items = datastore("todos").get(session_id) or []
+
+res.html("""
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>to-duso htmx example</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <main class="container">
+      <div id="help-btn" class="help-btn" onclick="document.querySelector('small').classList.toggle('show')"></div>
+      <h1>to-duso</h1>
+      <small>Multi-session todo mvp with <a href="https://duso.rocks">duso</a> and <a href="https://htmx.org">htmx</a>. New sessions get a sharable URL. Data is persisted for all sessions.</small>
+      <form hx-post="/todo/{{session_id}}" hx-target="ul" hx-swap="beforeend" hx-on::after-request="if(event.detail.successful) this.reset()">
+        <fieldset role="group">
+          <input type="text" name="title" placeholder="Add a new todo..." required>
+          <button type="submit">Add</button>
+        </fieldset>
+      </form>
+      <ul>
+        {{render_items(items, session_id)}}
+      </ul>
+    </main>
+  </body>
+  </html>
+""")

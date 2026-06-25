@@ -1,0 +1,19 @@
+store = datastore("todos")
+
+function render_todo(session_id, idx)
+  items = store.get(session_id) or []
+  item = items[idx]
+  if not item then return "" end
+  checked = item.completed ? "checked" : ""
+  completed_class = item.completed ? "completed" : ""
+  trash_icon = "<img src=\"icons/bold/trash-bold.svg\" class=\"icon-trash\">"
+  return """
+    <li class="{{completed_class}}">
+      <input type="checkbox" {{checked}} hx-post="/toggle/{{session_id}}/{{idx}}" hx-swap="none">
+      <span hx-get="/todo/{{session_id}}/{{idx}}" hx-target="this" hx-swap="outerHTML">{{item.title}}</span>
+      <button class="delete" hx-delete="/todo/{{session_id}}/{{idx}}" hx-target="closest li" hx-swap="outerHTML">{{trash_icon}}</button>
+    </li>
+  """
+end
+
+return { todo = render_todo }

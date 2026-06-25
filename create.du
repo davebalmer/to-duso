@@ -1,0 +1,13 @@
+render = require("render.du")
+ctx = context()
+res = ctx.response()
+req = ctx.request()
+store = datastore("todos")
+
+session_id = req.params.session
+items = store.get(session_id) or []
+idx = len(items)
+push(items, {title = req.form.title, completed = false})
+store.set(session_id, items)
+
+res.html(render.todo(session_id, idx))

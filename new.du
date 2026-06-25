@@ -1,0 +1,10 @@
+ctx = context()
+res = ctx.response()
+
+res.html("""
+  <form hx-post="/create" hx-target="ul" hx-swap="beforeend">
+    <input type="text" name="title" placeholder="New todo..." required>
+    <button type="submit">Add</button>
+    <button type="button" hx-on::click="this.closest('form').remove()">Cancel</button>
+  </form>
+""")

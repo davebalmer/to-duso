@@ -1,0 +1,19 @@
+datastore("todos", {
+  persist = "/CWD/todo-data/todos.gob",
+  wal = "/CWD/todo-data/todos.wal"
+})
+
+server = http_server()
+
+server.route("GET", "/", "index.du")
+server.route("GET", "/:session", "index.du")
+server.route("POST", "/todo/:session", "create.du")
+server.route("GET", "/todo/:session/:id", "edit.du")
+server.route("PATCH", "/todo/:session/:id", "update.du")
+server.route("DELETE", "/todo/:session/:id", "delete.du")
+server.route("POST", "/toggle/:session/:id", "toggle.du")
+
+server.static("/*", ".")
+
+print("Server listening on http://localhost:8080")
+server.start()

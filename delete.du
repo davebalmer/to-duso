@@ -1,0 +1,13 @@
+ctx = context()
+res = ctx.response()
+req = ctx.request()
+store = datastore("todos")
+
+session_id = req.params.session
+idx = tonumber(req.params.id)
+items = store.get(session_id) or []
+
+items[idx] = nil
+store.set(session_id, items)
+
+res.html("")

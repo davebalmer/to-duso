@@ -1,0 +1,12 @@
+ctx = context()
+res = ctx.response()
+req = ctx.request()
+session_id = req.params.session
+idx = tonumber(req.params.id)
+
+store = datastore("todos")
+items = store.get(session_id) or []
+
+items[idx].completed = not items[idx].completed
+store.set(session_id, items)
+res.error(204)
