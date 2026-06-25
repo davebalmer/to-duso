@@ -201,13 +201,14 @@ button.delete:hover svg {
     margin-bottom: 1.5rem;
   }
 
-  fieldset {
-    flex-direction: column;
-    gap: 0.5rem;
+  button:not(.delete) {
+    flex-shrink: 0;
+    padding: 0.75rem 1rem;
   }
 
-  button:not(.delete) {
-    width: 100%;
+  input[type="text"] {
+    padding: 0.5rem;
+    font-size: 0.95rem;
   }
 
   li {
