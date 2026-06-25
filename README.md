@@ -17,7 +17,7 @@ Current version is 164 lines of code split into logical route handlers:
 
 ## Install Duso
 
-Visit [duso.rocks/download](https://duso.rocks/download) to download Duso or install via Homebrew:
+Duso is a server ecosystem built into its own 10MB binary. Visit [duso.rocks/download](https://duso.rocks/download) to download Duso with an instealler, from binaries, or install with Homebrew:
 
 ```bash
 brew install duso-org/tap/duso
@@ -30,6 +30,11 @@ duso server.du
 ```
 
 Open [http://localhost:8080](http://localhost:8080) to start using the todo app.
+
+## Requirements
+
+- Linux, macOS, or Windows machine with terminal access
+- a web browser
 
 ## Features
 
