@@ -2,6 +2,8 @@
 
 A TODO MVP web app built with Duso, a complete server runtime with zero dependencies and its own full featured web server and flexible nosql database. Uses HTMX for single-page web app interactions. This version is 164 lines of script and html code split into logical route handlers.
 
+![to-duso screenshot](to-duso-screenshot.png)
+
 ## Install Duso
 
 Duso is a server ecosystem built into its own 10MB binary. Visit [duso.rocks/download](https://duso.rocks/download) to download Duso with an instealler, from binaries, or install with Homebrew:
