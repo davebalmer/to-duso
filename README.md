@@ -1,6 +1,6 @@
 # to-duso
 
-A TODO MVP web app built with [Duso](https://duso.rocks), a complete server runtime with zero dependencies and its own full featured web server and flexible nosql database.
+A TODO MVP web app built with Duso, a complete server runtime with zero dependencies and its own full featured web server and flexible nosql database. Uses HTMX for single-page web app interactions.
 
 Current version is 164 lines of code split into logical route handlers:
 
@@ -8,12 +8,12 @@ Current version is 164 lines of code split into logical route handlers:
 |-------------|-----------------------------------------------|
 | `server.du` | HTTP server setup and route definitions       |
 | `index.du`  | Main page with session support and todo list  |
-| `render.du` | Renders individual todo items as HTML         |
-| `create.du` | Creates a new todo from form submission       |
-| `edit.du`   | Shows inline edit form for a todo             |
-| `update.du` | Saves an updated todo                         |
-| `delete.du` | Deletes a todo                                |
-| `toggle.du` | Toggles todo completion status                |
+| `render.du` | Shared module to render todos as html         |
+| `create.du` | Create a new todo from form submission        |
+| `edit.du`   | Show inline edit form for a todo              |
+| `update.du` | Save an updated todo                          |
+| `delete.du` | Delete a todo                                 |
+| `toggle.du` | Toggle todo completion status                 |
 
 ## Install Duso
 
@@ -45,10 +45,10 @@ Open [http://localhost:8080](http://localhost:8080) to start using the todo app.
 
 ## Learn More
 
-- [Duso Documentation](https://duso.rocks)
-- [HTMX Documentation](https://htmx.org)
 - [Blog Post](#) (coming soon)
-- [Framework Comparison](https://duso.rocks/docs/docs/todo-comparison.html)
+- [How it compares with 6 other TODO MVP apps](https://duso.rocks/docs/docs/todo-comparison.html) written in a number of solutions (TL;DR this example is shorter and less messy than the rest)
+- [Duso Homepage](https://duso.rocks)
+- [HTMX Homepage](https://htmx.org)
 
 ## License
 
