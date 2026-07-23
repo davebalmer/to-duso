@@ -52,8 +52,8 @@ Open [http://localhost:8080](http://localhost:8080) to start using the todo app.
 
 ## Learn More
 
-- [Blog Post](#) (coming soon)
 - [How it compares](https://duso.rocks/docs/docs/todo-comparison.html) (TL;DR it rocks!)
+- [Blog Post](https://balmer.dev) (coming soon)
 - [Duso Homepage](https://duso.rocks)
 - [HTMX Homepage](https://htmx.org)
 
